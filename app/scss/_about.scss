@@ -1,0 +1,51 @@
+.about {
+  border-bottom: solid 1px $darkGray;
+  @include breakpoint-up(large) {
+    display: flex;
+  }
+
+  &__card {
+    @include breakpoint-up(medium) {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 100%;
+      max-height: 20rem;
+      object-fit: cover;
+      object-position: center;
+
+      @include breakpoint-up(medium) {
+        max-height: 23rem;
+      }
+    }
+
+    .textCont {
+      padding: 4rem 2.5rem;
+
+      h3 {
+        letter-spacing: 0.3rem;
+        margin-top: 0px;
+        font-size: $font-med;
+      }
+
+      p {
+        color: $darkGray;
+        line-height: 1.7rem;
+      }
+
+      @include breakpoint-up(medium) {
+        max-height: 22rem;
+        padding: 0 4rem;
+      }
+    }
+  }
+
+  img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 25rem;
+  }
+}

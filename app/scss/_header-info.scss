@@ -1,0 +1,143 @@
+.header-info {
+  width: 100%;
+  height: 34rem;
+  position: relative;
+
+  @include breakpoint-up(medium) {
+    flex: 3;
+    height: 44.5rem;
+  }
+
+  &__directionButtons {
+    position: absolute;
+    right: 0;
+    top: -4.66rem;
+    font-size: 0;
+    z-index: 1;
+
+    @include breakpoint-up(medium) {
+      position: absolute;
+      top: 37.83rem;
+      left: 0;
+    }
+
+    button {
+      width: 4.66rem;
+      height: 4.66rem;
+      border: 0;
+      outline: 0;
+      background-color: $black;
+      transition: background-color 0.1s ease-in-out;
+      cursor: pointer;
+
+      @include breakpoint-up(medium) {
+        height: 6.667rem;
+        width: 6.667rem;
+      }
+
+      &:hover {
+        background-color: $veryDarkGray;
+      }
+    }
+  }
+
+  &__box {
+    max-width: 50rem;
+    margin: auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    //info-wrap
+
+    .info-wrap {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 44.5rem;
+      padding: 6rem 2.5rem;
+      opacity: 0;
+      transition: opacity 0.5s, transform 0.5s;
+
+      @include breakpoint-up(medium) {
+        padding: 10rem 6rem;
+      }
+    }
+
+    .info-wrap.initial,
+    .info-wrap.active {
+      opacity: 1;
+    }
+
+    .info-wrap.next {
+      transform: translateX(100%);
+    }
+    .info-wrap.prev {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__title {
+    font-size: $font-lg;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    margin-top: 0px;
+
+    @include breakpoint-up(large) {
+      font-size: $font-xl;
+      font-weight: 600;
+    }
+  }
+
+  &__desc {
+    font-size: $font-norm;
+    line-height: 1.5rem;
+    color: $darkGray;
+    margin-bottom: 5rem;
+
+    @include breakpoint-up(medium) {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint-up(large) {
+      font-size: $font-med;
+
+      line-height: 1.7rem;
+    }
+  }
+
+  &__cta {
+    font-weight: 400;
+    font-size: $font-med;
+    letter-spacing: 0.7rem;
+    transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
+    position: relative;
+
+    @include breakpoint-up(large) {
+      letter-spacing: 1rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      width: 55%;
+      background-color: white;
+      transition: opacity 0.05s ease-in-out;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.7;
+      }
+    }
+
+    span {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+html {
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-row-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hide-fm {
+  @include breakpoint-down(x-small) {
+    display: none;
+  }
+}
+
+.hide-fd {
+  @include breakpoint-up(small) {
+    display: none;
+  }
+}
+
+.hero-wrap {
+  @include breakpoint-up(medium) {
+    display: flex;
+  }
+}
